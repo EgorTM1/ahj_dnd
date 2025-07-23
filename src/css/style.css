@@ -1,0 +1,149 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f5f7;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.board {
+  display: flex;
+  gap: 16px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: fit-content;
+  align-items: flex-start;
+}
+.column {
+  width: 280px;
+  background-color: #ebecf0;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+}
+.column-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5e6c84;
+  padding: 8px;
+  text-transform: uppercase;
+}
+.tasks {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+.task {
+  background-color: white;
+  border-radius: 4px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  cursor: grab;
+  position: relative;
+  word-break: break-word;
+  user-select: none;
+}
+.task-text {
+  width: calc(100% - 24px);
+  white-space: pre-wrap;
+  min-height: 20px;
+}
+.close-btn {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  background: none;
+  border: none;
+  color: #6b778c;
+  cursor: pointer;
+  font-size: 16px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+}
+.task:hover .close-btn {
+  display: block;
+}
+.add-card {
+  color: #5e6c84;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.add-card:hover {
+  background-color: rgba(9,30,66,.08);
+  color: #172b4d;
+}
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px;
+  width: calc(100% - 8px);
+  box-sizing: border-box;
+}
+.card-textarea {
+  width: 100%;
+  min-height: 60px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  resize: none;
+  font-family: inherit;
+  box-shadow: inset 0 0 0 2px #dfe1e6;
+  box-sizing: border-box;
+}
+.card-textarea:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #0079bf;
+}
+.form-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.submit-btn {
+  background-color: #5aac44;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background-color: #61bd4f;
+}
+.cancel-btn {
+  background: none;
+  border: none;
+  color: #6b778c;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+}
+.dragging {
+  opacity: 0.8;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transform: rotate(3deg);
+  position: absolute;
+  pointer-events: none;
+}
+.placeholder {
+  background-color: rgba(0, 121, 191, 0.2);
+  border: 2px dashed #0079bf;
+  border-radius: 4px;
+  margin: 8px 0;
+}
